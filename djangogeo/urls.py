@@ -5,6 +5,8 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from locations.views import LocationView, LocationGeoJSONLayerView
+from locations.models import Location
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -29,5 +31,8 @@ urlpatterns = patterns('',
     url(r'^avatar/', include('avatar.urls')),
 
     # Your stuff: custom urls go here
+    url(r'^data.geojson$', LocationGeoJSONLayerView.as_view(), name='data'),
+
+    url(r'^locations/$', LocationView.as_view(), name='locations'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

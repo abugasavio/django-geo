@@ -39,3 +39,4 @@ pytz==2014.10
 # Geo
 django-leaflet==0.15.2
 django-geojson==2.6.0
+django-jsonfield==1.0.2

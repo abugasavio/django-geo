@@ -1,0 +1,30 @@
+{% load leaflet_tags %}
+<html>
+  <head>
+    {% leaflet_js %}
+    {% leaflet_css %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <style>
+        .leaflet-container { height: 100%; }
+    </style>
+  </head>
+  <body>
+    <h1>Weather Stations</h1>
+    {% leaflet_map "main" callback="main_map_init" %}
+
+    <script type="text/javascript">
+        function main_map_init (map, options) {
+            var dataurl = '{% url "data" %}';
+            // Download GeoJSON via Ajax
+            $.getJSON(dataurl, function (data) {
+                console.log(data);
+                // Add GeoJSON layer
+                L.geoJson(data).addTo(map)
+                    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.' + data.features)
+                    .openPopup();
+            });
+
+        }
+    </script>
+  </body>
+</html>

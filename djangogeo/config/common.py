@@ -42,11 +42,15 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'leaflet',
+        'djgeojson',
+
     )
 
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
+        'locations',
         # Your stuff: custom apps go here
     )
 
