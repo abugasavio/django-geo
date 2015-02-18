@@ -28,6 +28,9 @@
     {% block angular %}
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     {% endblock %}
+    {% block extra_head %}
+
+    {% endblock extra_head %}
 
   </head>
 
@@ -82,6 +85,9 @@
       <!-- place project specific Javascript in this file -->
       <script src="{% static 'js/project.js' %}"></script>
     {% endblock javascript %}
+    {% block extra_script %}
+
+    {% endblock extra_script %}
   </body>
 </html>
  

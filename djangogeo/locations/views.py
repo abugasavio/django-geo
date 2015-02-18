@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from djgeojson.views import GeoJSONLayerView
+from .models import Location
 
 
 class LocationView(TemplateView):
@@ -7,4 +8,5 @@ class LocationView(TemplateView):
 
 
 class LocationGeoJSONLayerView(GeoJSONLayerView):
-    model =
+    model = Location
+    properties = ['wmoid', 'name']

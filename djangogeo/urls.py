@@ -14,7 +14,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$',  # noqa
-        TemplateView.as_view(template_name='pages/home.html'),
+        LocationView.as_view(),
         name="home"),
     url(r'^about/$',
         TemplateView.as_view(template_name='pages/about.html'),
@@ -32,7 +32,5 @@ urlpatterns = patterns('',
 
     # Your stuff: custom urls go here
     url(r'^data.geojson$', LocationGeoJSONLayerView.as_view(), name='data'),
-
-    url(r'^locations/$', LocationView.as_view(), name='locations'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
