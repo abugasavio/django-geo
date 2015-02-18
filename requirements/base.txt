@@ -41,4 +41,4 @@ django-leaflet==0.15.2
 # needs geospatial lib
 # https://docs.djangoproject.com/en/1.7/ref/contrib/gis/install/geolibs/#geospatial-libs
 django-geojson==2.6.0
-django-jsonfield==1.0.2
+django-jsonfield==0.9.13
